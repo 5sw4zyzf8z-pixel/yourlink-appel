@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Appel · The Link</title>
+<style>:root{color-scheme:light dark}body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;font:17px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#0e0e10;color:#f2f1ee;text-align:center;padding:24px;box-sizing:border-box}
+a{display:inline-block;margin-top:14px;padding:16px 26px;border-radius:14px;background:#c9a043;color:#0e0e10;font-weight:700;font-size:1.4rem;text-decoration:none;letter-spacing:.02em}p{color:#b9bec5;margin:14px 0 0;font-size:.95rem}b{display:block;font-size:.75rem;letter-spacing:.2em;color:#c9a043}</style></head>
+<body><main><b>THE LINK · APPEL</b><a id="num" href="#">…</a><p id="msg">Touchez le numéro pour appeler. Revenez ensuite à The Link.</p></main>
+<script>
+var n=(new URLSearchParams(location.search).get("n")||"").replace(/[^\d+]/g,"");
+var a=document.getElementById("num");
+if(n){a.href="tel:"+n;a.textContent=n;setTimeout(function(){location.href="tel:"+n},150)}else{a.textContent="Numéro manquant";document.getElementById("msg").textContent="Aucun numéro reçu."}
+</script></body></html>
